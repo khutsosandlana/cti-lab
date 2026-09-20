@@ -7,3 +7,4 @@ cti-venv/
 pcaps/
 iocs/
 yara_rules/*.bin
+tools/*.zip
