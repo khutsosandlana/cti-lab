@@ -1,0 +1,9 @@
+# Ignore sensitive keys and virtual environments
+.env
+cti-venv/
+*.key
+
+# Ignore raw malware and captures
+pcaps/
+iocs/
+yara_rules/*.bin
