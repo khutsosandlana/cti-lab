@@ -13,3 +13,6 @@ artifacts/
 .env.*
 !.env.example
 .DS_Store
+
+cti_lab.egg-info/
+*.egg-info/

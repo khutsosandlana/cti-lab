@@ -15,14 +15,19 @@ def test_duplicate_indicators_are_merged():
         {"value": "Example.COM", "source": "one", "labels": ["a"]},
         {"value": "example.com.", "source": "two", "labels": ["b"]},
     ]
+
     result = process_records(records)
+
     assert len(result) == 1
     assert result[0]["labels"] == ["a", "b"]
     assert result[0]["raw_sources"] == ["one", "two"]
 
 
-def test_sample_data_can_be_processed(tmp_path):
-    source = json.loads(open("sample_data/indicators.json", encoding="utf-8").read())
+def test_sample_data_can_be_processed():
+    with open("sample_data/indicators.json", encoding="utf-8") as file:
+        source = json.load(file)
+
     output = process_records(source["indicators"])
+
     assert len(output) == 2
     assert output[0]["confidence"] >= 0

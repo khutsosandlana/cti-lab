@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import hashlib
 import ipaddress
 import re
 from urllib.parse import urlsplit, urlunsplit
@@ -48,7 +47,9 @@ def detect_type(value: str, declared: str | None = None) -> IndicatorType:
         return IndicatorType.EMAIL
     if candidate.lower().startswith(("http://", "https://")):
         return IndicatorType.URL
-    if len(candidate) in _HASH_LENGTHS and all(char in "0123456789abcdefABCDEF" for char in candidate):
+    if len(candidate) in _HASH_LENGTHS and all(
+        char in "0123456789abcdefABCDEF" for char in candidate
+    ):
         return _HASH_LENGTHS[len(candidate)]
     if "." in candidate and " " not in candidate:
         return IndicatorType.DOMAIN
