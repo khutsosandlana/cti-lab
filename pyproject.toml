@@ -8,7 +8,9 @@ version = "0.1.0"
 description = "A modular cyber threat-intelligence collection and analysis pipeline"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+  "requests>=2.31,<3",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -21,7 +23,21 @@ dev = [
 cti-pipeline = "cti_pipeline.cli:main"
 
 [tool.setuptools.packages.find]
+where = ["."]
 include = ["cti_pipeline*"]
+exclude = [
+  "scripts*",
+  "tools*",
+  "tests*",
+  "iocs*",
+  "pcaps*",
+  "reports*",
+  "artifacts*",
+  "campaigns*",
+  "yara_rules*",
+  "sample_data*",
+]
+namespaces = false
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -30,3 +46,12 @@ addopts = "-q"
 [tool.ruff]
 line-length = 100
 target-version = "py310"
+exclude = [
+  "scripts",
+  "tools",
+  "cti-venv",
+  ".venv",
+  "venv",
+  "build",
+  "dist",
+]
