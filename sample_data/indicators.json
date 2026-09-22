@@ -1,0 +1,25 @@
+{
+  "indicators": [
+    {
+      "value": "198.51.100.10",
+      "type": "ipv4-addr",
+      "source": "training-feed",
+      "labels": ["example", "c2"],
+      "last_seen": "2026-09-22T10:00:00Z",
+      "source_url": "https://example.org/report/001"
+    },
+    {
+      "value": "Example.COM.",
+      "type": "domain-name",
+      "source": "training-feed",
+      "labels": ["example"],
+      "source_url": "https://example.org/report/001"
+    },
+    {
+      "value": "example.com",
+      "type": "domain-name",
+      "source": "second-training-feed",
+      "labels": ["confirmed"]
+    }
+  ]
+}
