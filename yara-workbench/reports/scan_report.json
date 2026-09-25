@@ -1,0 +1,26 @@
+{
+  "scan_timestamp": "2026-09-22T16:56:12.921031Z",
+  "rules_directory": "yara-workbench/rules",
+  "target_directory": "yara-workbench/samples",
+  "total_detections": 1,
+  "detections": [
+    {
+      "file_path": "yara-workbench/samples/malicious/test_powershell.ps1",
+      "file_name": "test_powershell.ps1",
+      "matched_count": 1,
+      "matches": [
+        {
+          "rule": "Suspicious_PS_DownloadCradle",
+          "tags": [],
+          "meta": {
+            "description": "Detects obfuscated or direct PowerShell download cradles",
+            "author": "Khutso",
+            "date": "2026-09-22",
+            "severity": "High"
+          },
+          "namespace": "powershell_download"
+        }
+      ]
+    }
+  ]
+}
